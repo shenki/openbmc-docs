@@ -28,7 +28,7 @@ The Palmetto target is `palmetto`.
 
 If you are starting from scratch without a `build/conf` directory you can just:
 ```
-$ cd openbmc
+$ git clone https://github.com/openbmc/openbmc && cd openbmc
 $ TEMPLATECONF=meta-openbmc-machines/meta-openpower/meta-ibm/meta-palmetto/conf . oe-init-build-env
 $ bitbake obmc-phosphor-image
 ```
