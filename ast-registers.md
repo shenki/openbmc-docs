@@ -1,10 +1,10 @@
-== Registers on the AST2400
+# Registers on the AST2400
 
-=== AST vs OBMC
+## AST vs OBMC
 
 AST kernel was booted first. Using AST u-boot.
 
-==== All registers
+### All registers
 
 |Register|AST Kernel  |OBMC Kernel |Comment
 |--------|------------|------------|--------
@@ -67,7 +67,7 @@ AST kernel was booted first. Using AST u-boot.
 | SCU e0 | `7f82d2f8` | `a44c1980` | Counter
 | SCU e4 | `00000002` | `00000003` | Counter
 
-==== Changes
+### Changes
 
 |Register|AST Kernel  |OBMC Kernel |Comment
 |--------|------------|------------|--------
