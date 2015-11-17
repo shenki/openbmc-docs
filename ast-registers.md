@@ -38,7 +38,7 @@ OBMC booted after the AST kernel (dirty), vs booted from a clean power on. tftp 
 | SCU 6c | `10dbffff` | `10dfffff` | VGA Scratch register #8. Unknown why it differs
 | SCU 70 | `120ce406` | `120ce406` |
 | SCU 74 | `0000000e` | `0000000e` |
-| SCU 78 | `3123af2e  | `348e3a8d` | Random number generator. Still works.
+| SCU 78 | `3123af2e`  | `348e3a8d` | Random number generator. Still works.
 | SCU 7c | `02010303` | `02010303` |
 | SCU 80 | `cb000000` | `cb000000` |
 | SCU 84 | `00fff0c0` | `00fff0c0` |
