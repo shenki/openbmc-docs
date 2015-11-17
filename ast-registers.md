@@ -79,7 +79,7 @@ OBMC booted after the AST kernel (dirty), vs booted from a clean power on. tftp 
 | SCU 5c | `fc3fffe2` | `fd3fffe2` | VGA Scratch register #4. Unknown why it differs
 | SCU 60 | `ffffdeea` | `ffffdfea` | VGA Scratch register #5. Unknown why it differs
 | SCU 6c | `10dbffff` | `10dfffff` | VGA Scratch register #8. Unknown why it differs
-| SCU 78 | `3123af2e  | `348e3a8d` | Random number generator. Still works.
+| SCU 78 | `3123af2e`  | `348e3a8d` | Random number generator. Still works.
 | SCU 88 | `c1c000ff` | `c1000000` | Does not have BMC IRQ# interrupt output, NOR flash ACK control input pin enabled
 | SCU 8c | `c1c000ff` | `000000ff` | Does not have GPIO R, P, I, H or G pull downs enabled
 | SCU 90 | `003fa009` | `0002a001` | Does not have I2C 8, 7, 5, 6, 3 and USB1.1 host port 2 functions enabled
