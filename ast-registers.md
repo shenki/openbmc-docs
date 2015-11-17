@@ -1,8 +1,14 @@
 == Registers on the AST2400
 
-|Register|AST Kernel  |OBMC Kernel |
-|--------|------------|------------|
-| SCU 00 | `00000000` | `00000001` |
+=== AST vs OBMC
+
+AST kernel was booted first. Using AST u-boot.
+
+==== All registers
+
+|Register|AST Kernel  |OBMC Kernel |Comment
+|--------|------------|------------|--------
+| SCU 00 | `00000000` | `00000001` | SCU unlocked. We should lock the SCU, but this is okay for now
 | SCU 04 | `ff0ea088` | `ff0ea088` |
 | SCU 08 | `71b4b008` | `71b4b008` |
 | SCU 0c | `10cc5e80` | `10cc5e80` |
@@ -17,7 +23,7 @@
 | SCU 30 | `20001a03` | `20001a03` |
 | SCU 34 | `20001a03` | `20001a03` |
 | SCU 38 | `04000030` | `04000030` |
-| SCU 3c | `00000001` | `00000003` |
+| SCU 3c | `00000001` | `00000003` | OBMC has watchdog reset flag enabled
 | SCU 40 | `000000c1` | `000000c1` |
 | SCU 44 | `00000010` | `00000010` |
 | SCU 48 | `00002255` | `00002255` |
@@ -32,11 +38,11 @@
 | SCU 6c | `10dbffff` | `10dbffff` |
 | SCU 70 | `120ce406` | `120ce406` |
 | SCU 74 | `0000000e` | `0000000e` |
-| SCU 78 | `842fe534` | `22b1c27b` |
+| SCU 78 | `842fe534` | `22b1c27b` | Random number generator
 | SCU 7c | `02010303` | `02010303` |
 | SCU 80 | `cb000000` | `cb000000` |
 | SCU 84 | `00fff0c0` | `00fff0c0` |
-| SCU 88 | `01c000ff` | `c1c000ff` |
+| SCU 88 | `01c000ff` | `c1c000ff` |OBMC has MAC#1 MDIO1 and MAC#1 MDC1 enabled. Unknown?
 | SCU 8c | `c1c000ff` | `c1c000ff` |
 | SCU 90 | `003fa009` | `003fa009` |
 | SCU 94 | `00000000` | `00000000` |
@@ -58,5 +64,16 @@
 | SCU d4 | `00000000` | `00000000` |
 | SCU d8 | `00000000` | `00000000` |
 | SCU dc | `00000000` | `00000000` |
-| SCU e0 | `7f82d2f8` | `a44c1980` |
-| SCU e4 | `00000002` | `00000003` |
+| SCU e0 | `7f82d2f8` | `a44c1980` | Counter
+| SCU e4 | `00000002` | `00000003` | Counter
+
+==== Changes
+
+|Register|AST Kernel  |OBMC Kernel |Comment
+|--------|------------|------------|--------
+| SCU 00 | `00000000` | `00000001` |SCU unlockd. We should lock the SCU, but this is okay for now
+| SCU 3c | `00000001` | `00000003` | OBMC has watchdog reset flag enabled
+| SCU 78 | `842fe534` | `22b1c27b` | Random number generator
+| SCU 88 | `01c000ff` | `c1c000ff` |OBMC has MAC#1 MDIO1 and MAC#1 MDC1 enabled. Unknown?
+| SCU e0 | `7f82d2f8` | `a44c1980` | Counter
+| SCU e4 | `00000002` | `00000003` | Counter
